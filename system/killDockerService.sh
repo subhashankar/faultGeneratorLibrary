@@ -8,5 +8,5 @@ echo $CONTAIINERID
 for temp in $CONTAINERID
 do
         echo "Stopping $temp"
-        docker stop 
+        docker stop $temp 
 done
