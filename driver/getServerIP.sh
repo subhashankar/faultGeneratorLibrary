@@ -15,7 +15,7 @@ cdsPass=password
 
 
 #INT SHARD ENVT
-cdsexe='/Users/sshankar/Downloads/cds-cli/darwin_amd64/'
+cdsexe='/home/chaos/Downloads/linux_amd64/cds'
 $cdsexe connect vcd-deployment http://192.168.55.142/api vcd-deployment
 $cdsexe svc show --all --compact --json > ./cdsSvcResult.json
 $cdsexe vms --json > ./cdsVmsJsonOutput.json
