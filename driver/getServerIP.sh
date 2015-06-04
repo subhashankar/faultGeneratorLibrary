@@ -15,10 +15,10 @@ cdsPass=password
 
 
 #INT SHARD ENVT
-cd /Users/sshankar/Downloads/cds-cli/darwin_amd64/
-./cds connect vcd-deployment http://192.168.55.142/api vcd-deployment
-./cds svc show --all --compact --json > ./cdsSvcResult.json
-./cds vms --json > ./cdsVmsJsonOutput.json
+cdsexe='/Users/sshankar/Downloads/cds-cli/darwin_amd64/'
+$cdsexe connect vcd-deployment http://192.168.55.142/api vcd-deployment
+$cdsexe svc show --all --compact --json > ./cdsSvcResult.json
+$cdsexe vms --json > ./cdsVmsJsonOutput.json
 
 #Any CDS Envt
 #cd /Users/sshankar/Documents/repositories/dbaas-release/dev/cds
