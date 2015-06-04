@@ -9,21 +9,21 @@ echo "First parameter:" $1
 # Service name
 serviceName=$1
 
-cdsHost="192.168.55.142"
+cdsHost="192.168.20.5"
 cdsUser=root
 cdsPass=password
 
 
 #INT SHARD ENVT
-cdsexe='/home/chaos/Downloads/linux_amd64/cds'
-$cdsexe connect vcd-deployment http://192.168.55.142/api vcd-deployment
-$cdsexe svc show --all --compact --json > ./cdsSvcResult.json
-$cdsexe vms --json > ./cdsVmsJsonOutput.json
+#cdsexe='/home/chaos/Downloads/linux_amd64/cds'
+#$cdsexe connect vcd-deployment http://192.168.55.142/api vcd-deployment
+#$cdsexe svc show --all --compact --json > ./cdsSvcResult.json
+#$cdsexe vms --json > ./cdsVmsJsonOutput.json
 
 #Any CDS Envt
 #cd /Users/sshankar/Documents/repositories/dbaas-release/dev/cds
-#./sshpassBaseScript.sh $cdsHost $cdsUser $cdsPass "cds svc show --all --compact --json" > cdsSvcResult.json
-#./sshpassBaseScript.sh $cdsHost $cdsUser $cdsPass "cds vms --json" > cdsVmsJsonOutput.json
+./sshpassBaseScript.sh $cdsHost $cdsUser $cdsPass "cds svc show --all --compact --json" > cdsSvcResult.json
+./sshpassBaseScript.sh $cdsHost $cdsUser $cdsPass "cds vms --json" > cdsVmsJsonOutput.json
 #vmId=`cat cdsSvcResult.json |jq '.[]|select (."name" == "$serviceName")|.vm.id'|tr -d '"'`
 #echo "VMID for $serviceName:"
 vmId=$(echo "cat cdsSvcResult.json |jq '.[]|select (."name" == \"$serviceName\")|.vm.id'|tr -d '\"'" | sh -fx)
